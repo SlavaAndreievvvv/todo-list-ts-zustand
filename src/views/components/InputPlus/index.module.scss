@@ -1,0 +1,36 @@
+.InputPlus {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  &Input {
+    width: 100%;
+    height: 100%;
+    background: #dbe2ef;
+    border: 1px solid rgba(177, 177, 177, 0.4);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 14px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 14px;
+    color: black;
+    ::placeholder {
+      color: #7b7b7b;
+    }
+  }
+  &Button {
+    width: 64px;
+    height: 100%;
+    background: #3f72af url(../InputPlus/images/plus.svg) no-repeat center
+      center;
+    border-radius: 0px 5px 5px 0px;
+    outline: 1px solid #3f72af;
+    border: none;
+    cursor: pointer;
+  }
+}

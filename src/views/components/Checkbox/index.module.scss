@@ -1,0 +1,116 @@
+$min-screen: 375px;
+$screen-1: 400px;
+$screen-2: 500px;
+$screen-3: 600px;
+$screen-4: 700px;
+$screen-5: 800px;
+$screen-6: 1024px;
+
+@mixin increase-max-width($max-width) {
+  max-width: calc(#{$max-width} + 15%);
+
+  @media screen and (min-width: $screen-1) {
+    max-width: calc(#{$max-width} + 35%);
+  }
+
+  @media screen and (min-width: $screen-2) {
+    max-width: calc(#{$max-width} + 45%);
+  }
+
+  @media screen and (min-width: $screen-3) {
+    max-width: calc(#{$max-width} + 55%);
+  }
+  @media screen and (min-width: $screen-4) {
+    max-width: calc(#{$max-width} + 65%);
+  }
+  @media screen and (min-width: $screen-5) {
+    max-width: calc(#{$max-width} + 75%);
+  }
+}
+
+.checkbox {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+
+  &EditInput {
+    width: 90%;
+    height: 28px;
+    background: white;
+    border: 1px solid rgba(177, 177, 177, 0.4);
+    border-radius: 5px;
+    padding: 0 4px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 14px;
+    color: black;
+  }
+
+  &Input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: white;
+    transition-property: border-color background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    margin-right: 12px;
+  }
+
+  &Button:hover {
+    border-color: #3f72af;
+  }
+
+  &Icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    fill: transparent;
+    stroke: white;
+    transition: opacity 0.2s ease;
+  }
+  &Text {
+    position: absolute;
+    top: 75%;
+    left: 36px;
+    transform: translateY(-50%);
+    @include increase-max-width(70px);
+    width: 100%;
+    overflow-x: scroll;
+    z-index: 10;
+    padding: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  &Input:checked + .checkboxButton {
+    background-color: #3f72af;
+    border-color: #3f72af;
+  }
+
+  &Input:checked + .checkboxButton .checkboxIcon {
+    opacity: 1;
+  }
+  &Input:checked + .checkboxButton + .checkboxText {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+  &Input:disabled + .checkboxButton {
+    border-color: grey;
+    cursor: default;
+  }
+}

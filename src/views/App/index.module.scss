@@ -1,0 +1,42 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  background: #f9f7f7;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 48px;
+  padding-right: 48px;
+
+  &Title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #112d4e;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &Section {
+    max-width: 650px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  &SectionScroll {
+    max-height: 60vh;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  &Section:not(:last-child) {
+    margin-bottom: 24px;
+  }
+  &NoTask {
+    margin: 0 auto;
+    margin: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
