@@ -1,6 +1,5 @@
 import styles from "./index.module.scss";
 import { useCallback, useState } from "react";
-import plus from "./images/plus.svg";
 
 interface InputPlusParams {
   onAdd: (title: string) => void;

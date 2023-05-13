@@ -6,7 +6,7 @@ import { Checkbox } from "../Checkbox";
 interface TaskProps {
   id: string;
   title: string;
-  onDone: (id: string) => void;
+
   onEdited: (id: string, title: string) => void;
   onRemoved: (id: string) => void;
 }
@@ -14,7 +14,7 @@ interface TaskProps {
 export const Task: React.FC<TaskProps> = ({
   id,
   title,
-  onDone,
+
   onEdited,
   onRemoved,
 }) => {
